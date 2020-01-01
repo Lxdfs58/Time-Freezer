@@ -1,0 +1,46 @@
+#IncludeRegexLine: ^[ 	]*[#%][ 	]*(include|import)[ 	]*[<"]([^">]+)([">])
+
+#IncludeRegexScan: ^.*$
+
+#IncludeRegexComplain: ^$
+
+#IncludeRegexTransform: 
+
+/Library/Frameworks/SDL2_image.framework/Headers/SDL_image.h
+SDL2/SDL.h
+-
+SDL2/SDL_version.h
+-
+SDL2/begin_code.h
+-
+SDL2/close_code.h
+-
+
+/Users/lxdfs/Documents/C++/TIME_FREEZER/v6.1 bugfixed/EntityType.h
+
+/Users/lxdfs/Documents/C++/TIME_FREEZER/v6.1 bugfixed/Ltexture.h
+stdio.h
+-
+string
+-
+SDL2/SDL.h
+-
+SDL_image.h
+-
+
+/Users/lxdfs/Documents/C++/TIME_FREEZER/v6.1 bugfixed/entity.cpp
+entity.h
+/Users/lxdfs/Documents/C++/TIME_FREEZER/v6.1 bugfixed/entity.h
+
+/Users/lxdfs/Documents/C++/TIME_FREEZER/v6.1 bugfixed/entity.h
+SDL2/SDL.h
+-
+SDL_image.h
+-
+iostream
+-
+Ltexture.h
+/Users/lxdfs/Documents/C++/TIME_FREEZER/v6.1 bugfixed/Ltexture.h
+EntityType.h
+/Users/lxdfs/Documents/C++/TIME_FREEZER/v6.1 bugfixed/EntityType.h
+

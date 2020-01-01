@@ -1,0 +1,3 @@
+v6.3 changelog
+Remove的部分加了break 避免重複刪除記憶體位置
+score顯示正常
