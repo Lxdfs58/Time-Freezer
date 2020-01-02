@@ -1,51 +1,34 @@
 #include "enemy.h"
 #include "resource.h"
+#include "MusicPlayer.h"
 Enemy::Enemy(int randmax)
 {
-	i = 1;
+	static int num =1;
+	ID = num;
+	num++;
+	i =0 ;
+	frame = 0;
 	creature = (randmax/7)%3+1;
 	color = randmax%3+1;//1 for black 2 for blue 3 for orange
 	direction = (randmax/7)%4+1;
 	count = 0;
 	type=ENTITY_TYPE_ENEMY;
     isoutdated=false;
-	explosion = &resource::explosionTexture;
-	for(int i=0;i<4;i++)
+	for(int i=0;i<3;i++)
 	{
-	   Explosion[i].x = 25+115*i;
-	   Explosion[i].y = 40;
-	   Explosion[i].w = 75;
-	   Explosion[i].h = 75;  		
-	}
-	for(int i=4;i<8;i++)
-	{
-	   Explosion[i].x = 16+129*i;
-	   Explosion[i].y = 150;
-	   Explosion[i].w = 89;
-	   Explosion[i].h = 89;  		
-	}
-	for(int i=8;i<12;i++)
-	{
-	   Explosion[i].x = 16+129*i;
-	   Explosion[i].y = 285;
-	   Explosion[i].w = 89;
-	   Explosion[i].h = 89;  		
-	}
-	for(int i=12;i<16;i++)
-	{
-	   Explosion[i].x = 16+129*i;
-	   Explosion[i].y = 414;
-	   Explosion[i].w = 89;
-	   Explosion[i].h = 89;  		
+		for(int j=0;j<4;j++){
+			Explosion[i*4+j].x = 128*j;
+			Explosion[i*4+j].y = 128*i;
+			Explosion[i*4+j].w = 128;
+			Explosion[i*4+j].h = 128;
+		}
 	}
 	if(creature == 1) {
-		local = &resource::sharkTexture;
 		Width = 147;
 		Height =363;
 		Health=5;
 	}
 	else if(creature == 2) {
-		local = &resource::troodonTexture;
 		Width = 80;
 		Height =355;
 		SplitClips[0].x = 25;
@@ -59,7 +42,6 @@ Enemy::Enemy(int randmax)
 		Health=3;
 	}
 	else if(creature == 3) {
-		local = &resource::fishTexture;
 		Width = 123;
 		Height =170;
 		SplitClips[0].x = 12;
@@ -72,20 +54,6 @@ Enemy::Enemy(int randmax)
 		SplitClips[1].h = Height;
 		Health=1;
 	}
-
-	if(color == 1)
-	{
-		local->setColor(80,80,80);
-	}
-	else if(color == 2)
-	{
-		local->setColor(0,50,255);
-	}
-	else if(color == 3)
-	{
-		local->setColor(255,170,0);
-	}
-	cout<<direction<<endl;
 	if(direction == 1)//forward
 	{
 		PosX = randmax%(resource::SCREEN_WIDTH - Width);
@@ -119,6 +87,11 @@ Enemy::Enemy(int randmax)
 		angle = 90;
 	}
 	
+}
+
+Enemy::~Enemy()
+{
+
 }
 
 void Enemy::move(int dx,int dy)
@@ -172,21 +145,24 @@ void Enemy::render()
 			resource::troodonTexture.render(PosX ,PosY ,&SplitClips[frame],angle);
 		else if(creature == 3)
 			resource::fishTexture.render(PosX ,PosY ,&SplitClips[frame],angle);
-		//cout<<'x'<<PosX<<'y'<<PosY<<"alive"<<endl;
 	}
 	else if(!isoutdated){
 		DiffY = 0;
 		DiffX = 0;
-		resource::explosionTexture.render(PosX + Width/2,PosY + Height/2,&Explosion[i/10]);
+		resource::explosionTexture.render(PosX+(Width-128)/2,PosY + (Height-128)/2,&Explosion[i]);
 		i++;
-		if(i/10==15){
+		Health = 0;
+		cout<<"ID :"<<ID<<" x "<<PosX<<" y "<<PosY<<"  ####killed"<<endl;
+		cout<<"current frame "<<i<<endl;
+		if(i==11){
 			isoutdated =true;
 			Health = -1;
 		}
-		Health = 0;
-		//cout<<'x'<<PosX<<'y'<<PosY<<"  ####killed"<<endl;
+		if(i == 5){
+			MusicPlayer explode;
+			explode.Play("../textures/Explosion.mp3");
+			(resource::score)++;
+		}
 	}
-	//cout<<'x'<<PosX<<'y'<<PosY<<endl;
-	//cout<<"current frame "<<i<<endl;
 	
 }

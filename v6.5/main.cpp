@@ -117,8 +117,8 @@ int main( int argc, char* args[] )
 				
 				if(obj->GetType()==ENTITY_TYPE_ENEMY&&obj->Health<=-1)
 				{
-					(resource::score)++;
-					musicPlayer.Play("../textures/Explosion.mp3");
+					//(resource::score)++;
+					//musicPlayer.Play("../textures/Explosion.mp3");
 					cout<<"==================="<<endl;
 				}
 				if((obj->getPosX() < -resource::SCREEN_WIDTH  ||
@@ -127,7 +127,7 @@ int main( int argc, char* args[] )
 					obj->getPosY() > 2*resource::SCREEN_HEIGHT||
 					obj->Health<=-1))
 				{
-					//cout<<obj->GetType()<<"removed"<<endl;
+					cout<<obj->GetType()<<"removed"<<endl;
 					pool.remove(obj);
 					break;
 				} 

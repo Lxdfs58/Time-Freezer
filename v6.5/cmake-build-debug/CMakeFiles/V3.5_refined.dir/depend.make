@@ -40,9 +40,11 @@ CMakeFiles/V3.5_refined.dir/bullet.cpp.o: ../entity.h
 CMakeFiles/V3.5_refined.dir/bullet.cpp.o: ../resource.h
 
 CMakeFiles/V3.5_refined.dir/enemy.cpp.o: /Library/Frameworks/SDL2_image.framework/Headers/SDL_image.h
+CMakeFiles/V3.5_refined.dir/enemy.cpp.o: /Library/Frameworks/SDL2_mixer.framework/Headers/SDL_mixer.h
 CMakeFiles/V3.5_refined.dir/enemy.cpp.o: /Library/Frameworks/SDL2_ttf.framework/Headers/SDL_ttf.h
 CMakeFiles/V3.5_refined.dir/enemy.cpp.o: ../EntityType.h
 CMakeFiles/V3.5_refined.dir/enemy.cpp.o: ../Ltexture.h
+CMakeFiles/V3.5_refined.dir/enemy.cpp.o: ../MusicPlayer.h
 CMakeFiles/V3.5_refined.dir/enemy.cpp.o: ../enemy.cpp
 CMakeFiles/V3.5_refined.dir/enemy.cpp.o: ../enemy.h
 CMakeFiles/V3.5_refined.dir/enemy.cpp.o: ../entity.h

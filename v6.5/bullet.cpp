@@ -4,7 +4,7 @@ bullet::bullet(int x, int y)
     : entity(10, 10, x, y)
 {
 	type=ENTITY_TYPE_BULLET;
-	Health=1;
+	Health=0;
 }
 
 void bullet::setposition(int player_posX,int player_posY)

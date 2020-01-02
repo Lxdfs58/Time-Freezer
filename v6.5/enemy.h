@@ -5,11 +5,10 @@
 
 class Enemy : public entity{
 public:
-	//Initialize the enemy
-	//Enemy();
 	//Initialize  randomly
 	Enemy(int randmax);
 
+	~Enemy();
 	void move(int dx,int dy);
 	
 	void onCollision(entity *another);
@@ -20,7 +19,8 @@ public:
 
 	static const int vel = 3;
 private:
-	SDL_Rect SplitClips[2];
+	SDL_Rect SplitClips[3];
+	SDL_Rect Explosion[15];
 	//colors
 	int color;
 	int direction;
@@ -31,14 +31,13 @@ private:
 	//flip angle
 	double angle;
 	//Local texture
-	LTexture *local;
     bool isupdate;
     
     int i;
+    //ID
+    int ID;
     
-   bool isoutdated;
-	LTexture *explosion;
-	SDL_Rect Explosion[16];  
+    bool isoutdated;
 };
 
 
