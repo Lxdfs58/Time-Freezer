@@ -16,9 +16,17 @@ SDL2/begin_code.h
 SDL2/close_code.h
 -
 
-/Users/lxdfs/Documents/C++/TIME_FREEZER/v6.1 bugfixed/EntityType.h
+/Library/Frameworks/SDL2_ttf.framework/Headers/SDL_ttf.h
+SDL2/SDL.h
+-
+SDL2/begin_code.h
+-
+SDL2/close_code.h
+-
 
-/Users/lxdfs/Documents/C++/TIME_FREEZER/v6.1 bugfixed/Ltexture.h
+/Users/lxdfs/Documents/C++/TIME_FREEZER/v6.3/EntityType.h
+
+/Users/lxdfs/Documents/C++/TIME_FREEZER/v6.3/Ltexture.h
 stdio.h
 -
 string
@@ -28,11 +36,45 @@ SDL2/SDL.h
 SDL_image.h
 -
 
-/Users/lxdfs/Documents/C++/TIME_FREEZER/v6.1 bugfixed/entity.cpp
-entity.h
-/Users/lxdfs/Documents/C++/TIME_FREEZER/v6.1 bugfixed/entity.h
+/Users/lxdfs/Documents/C++/TIME_FREEZER/v6.3/Timer.h
 
-/Users/lxdfs/Documents/C++/TIME_FREEZER/v6.1 bugfixed/entity.h
+/Users/lxdfs/Documents/C++/TIME_FREEZER/v6.3/barrier.h
+entity.h
+/Users/lxdfs/Documents/C++/TIME_FREEZER/v6.3/entity.h
+
+/Users/lxdfs/Documents/C++/TIME_FREEZER/v6.3/barrierGenerator.h
+memory
+-
+list
+-
+barrier.h
+/Users/lxdfs/Documents/C++/TIME_FREEZER/v6.3/barrier.h
+
+/Users/lxdfs/Documents/C++/TIME_FREEZER/v6.3/bullet.h
+SDL2/SDL.h
+-
+entity.h
+/Users/lxdfs/Documents/C++/TIME_FREEZER/v6.3/entity.h
+
+/Users/lxdfs/Documents/C++/TIME_FREEZER/v6.3/enemy.cpp
+enemy.h
+/Users/lxdfs/Documents/C++/TIME_FREEZER/v6.3/enemy.h
+resource.h
+/Users/lxdfs/Documents/C++/TIME_FREEZER/v6.3/resource.h
+
+/Users/lxdfs/Documents/C++/TIME_FREEZER/v6.3/enemy.h
+entity.h
+/Users/lxdfs/Documents/C++/TIME_FREEZER/v6.3/entity.h
+
+/Users/lxdfs/Documents/C++/TIME_FREEZER/v6.3/enemyGenerator.h
+memory
+-
+list
+-
+enemy.h
+/Users/lxdfs/Documents/C++/TIME_FREEZER/v6.3/enemy.h
+
+/Users/lxdfs/Documents/C++/TIME_FREEZER/v6.3/entity.h
 SDL2/SDL.h
 -
 SDL_image.h
@@ -40,7 +82,71 @@ SDL_image.h
 iostream
 -
 Ltexture.h
-/Users/lxdfs/Documents/C++/TIME_FREEZER/v6.1 bugfixed/Ltexture.h
+/Users/lxdfs/Documents/C++/TIME_FREEZER/v6.3/Ltexture.h
 EntityType.h
-/Users/lxdfs/Documents/C++/TIME_FREEZER/v6.1 bugfixed/EntityType.h
+/Users/lxdfs/Documents/C++/TIME_FREEZER/v6.3/EntityType.h
+
+/Users/lxdfs/Documents/C++/TIME_FREEZER/v6.3/main.cpp
+procedures.h
+/Users/lxdfs/Documents/C++/TIME_FREEZER/v6.3/procedures.h
+
+/Users/lxdfs/Documents/C++/TIME_FREEZER/v6.3/player.h
+SDL2/SDL.h
+-
+SDL_image.h
+-
+entity.h
+/Users/lxdfs/Documents/C++/TIME_FREEZER/v6.3/entity.h
+Ltexture.h
+/Users/lxdfs/Documents/C++/TIME_FREEZER/v6.3/Ltexture.h
+barrier.h
+/Users/lxdfs/Documents/C++/TIME_FREEZER/v6.3/barrier.h
+
+/Users/lxdfs/Documents/C++/TIME_FREEZER/v6.3/procedures.h
+stdexcept
+-
+memory
+-
+list
+-
+sstream
+-
+iostream
+-
+stdio.h
+-
+stdlib.h
+-
+time.h
+-
+string
+-
+iostream
+-
+SDL2/SDL.h
+-
+SDL_image.h
+-
+SDL_ttf.h
+-
+Ltexture.h
+/Users/lxdfs/Documents/C++/TIME_FREEZER/v6.3/Ltexture.h
+Timer.h
+/Users/lxdfs/Documents/C++/TIME_FREEZER/v6.3/Timer.h
+player.h
+/Users/lxdfs/Documents/C++/TIME_FREEZER/v6.3/player.h
+bullet.h
+/Users/lxdfs/Documents/C++/TIME_FREEZER/v6.3/bullet.h
+barrierGenerator.h
+/Users/lxdfs/Documents/C++/TIME_FREEZER/v6.3/barrierGenerator.h
+enemyGenerator.h
+/Users/lxdfs/Documents/C++/TIME_FREEZER/v6.3/enemyGenerator.h
+resource.h
+/Users/lxdfs/Documents/C++/TIME_FREEZER/v6.3/resource.h
+
+/Users/lxdfs/Documents/C++/TIME_FREEZER/v6.3/resource.h
+SDL_ttf.h
+-
+Ltexture.h
+/Users/lxdfs/Documents/C++/TIME_FREEZER/v6.3/Ltexture.h
 

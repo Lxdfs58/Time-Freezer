@@ -110,6 +110,7 @@ void Enemy::onCollision(entity *another)
     	another->Health--;
 		break;
     case ENTITY_TYPE_BULLET:
+	    local->setColor(200,10,10);
 		another->offset(-another->getDiffX(), -another->getDiffY());
 		Health--;
 		another->Health--;

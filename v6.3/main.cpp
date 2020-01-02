@@ -32,6 +32,7 @@ int main( int argc, char* args[] )
         bool quit = false;
 		while( !quit )
 		{
+
 		    SDL_Event e;
 			while( SDL_PollEvent( &e ) != 0 )
 			{

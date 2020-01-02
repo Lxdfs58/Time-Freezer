@@ -15,13 +15,13 @@ void bullet::setposition(int player_posX,int player_posY)
 
 void bullet::move(int Vx , int Vy)
 {
-    DiffX = 0;
+
 
     if(Vy)
 	DiffY=Vy>0? -Vy*2 :Vy*2;
     else
 	DiffY=Vx>0? -Vx*2 :Vx*2;
-
+	DiffX = Vy/2;
 	PosX += DiffX;
 	PosY += DiffY;
 	

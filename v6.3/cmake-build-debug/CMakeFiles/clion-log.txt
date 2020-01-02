@@ -1,4 +1,4 @@
-/Applications/CLion.app/Contents/bin/cmake/mac/bin/cmake -DCMAKE_BUILD_TYPE=Debug -G "CodeBlocks - Unix Makefiles" "/Users/lxdfs/Documents/C++/TIME_FREEZER/v6.1 bugfixed"
+/Applications/CLion.app/Contents/bin/cmake/mac/bin/cmake -DCMAKE_BUILD_TYPE=Debug -G "CodeBlocks - Unix Makefiles" /Users/lxdfs/Documents/C++/TIME_FREEZER/v6.3
 -- The C compiler identification is AppleClang 10.0.1.10010046
 -- The CXX compiler identification is AppleClang 10.0.1.10010046
 -- Check for working C compiler: /Library/Developer/CommandLineTools/usr/bin/cc
@@ -19,4 +19,4 @@
 -- Found SDL2_mixer: /Library/Frameworks/SDL2_mixer.framework (found version "2.0.4") 
 -- Configuring done
 -- Generating done
--- Build files have been written to: /Users/lxdfs/Documents/C++/TIME_FREEZER/v6.1 bugfixed/cmake-build-debug
+-- Build files have been written to: /Users/lxdfs/Documents/C++/TIME_FREEZER/v6.3/cmake-build-debug
