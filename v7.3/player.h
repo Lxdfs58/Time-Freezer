@@ -9,7 +9,7 @@
 class player : public entity
 {
 public:
-	player(int x, int y);
+	player(int x, int y, int k);
 	~player();
 
 	void update();
@@ -28,6 +28,8 @@ public:
 private:
 	//current frame
 	int frame;
+	//type of player
+	int kind;
 	unsigned int count;
 	SDL_Rect Explosion[15];
 	bool isoutdated;

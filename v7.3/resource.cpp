@@ -1,13 +1,16 @@
 #include "resource.h"
 
 int resource::score;
+long long resource::distance;
 
 SDL_Window* resource::gWindow = NULL;
 SDL_Renderer* resource::gRenderer = NULL;
 TTF_Font* resource::gFont = NULL;
 
 
-LTexture resource::gDotTexture;
+LTexture resource::gElephantTexture;
+LTexture resource::gCowTexture;
+LTexture resource::gWolfTexture;
 LTexture resource::gBGTexture;
 LTexture resource::rockTexture;
 LTexture resource::menuTexture;

@@ -12,6 +12,8 @@ public:
         DIR_CENTRE,
         DIR_LEFT,
         DIR_RIGHT,
+        DIR_StraighLEFT,
+	    DIR_StraighRIGHT,
     };	
 public:
 	bullet(int x, int y, Direction dir = DIR_CENTRE);

@@ -4,6 +4,7 @@
 #include <SDL2/SDL.h>
 #include <SDL_image.h>
 #include <iostream>
+#include "sstream"
 #include "Ltexture.h"
 #include "EntityType.h"
 using namespace std;

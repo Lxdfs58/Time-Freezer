@@ -10,8 +10,6 @@ Enemy::Enemy(int randmax)
 	frame = 0;
 	creature = (randmax/7)%3+1;//1 for shark 2 for troodon 3 for fish
 	color =1;//1 for black 2 for blue 3 for orange
-	if(randmax%7 == 0)
-        color = 2;
 	direction = (randmax/7)%4+1;
 	count = 0;
 	type=ENTITY_TYPE_ENEMY;
@@ -29,7 +27,7 @@ Enemy::Enemy(int randmax)
 	if(creature == 1) {
 		Width = 74;
 		Height =183;
-		Health=5;
+		Health=3;
 	}
 	else if(creature == 2) {
 		Width = 80;
@@ -42,7 +40,7 @@ Enemy::Enemy(int randmax)
 		SplitClips[1].y = 761;
 		SplitClips[1].w = Width;
 		SplitClips[1].h = Height;
-		Health=3;
+		Health=5;
 	}
 	else if(creature == 3) {
 		Width = 43;
@@ -103,7 +101,11 @@ Enemy::Enemy(int randmax)
 		DiffY =0;
 		angle = 90;
 	}
-	
+	if(randmax%7 == 0) {
+		color = 2;
+		Health*=2;
+	}
+	localscore = Health;
 }
 
 Enemy::~Enemy()
@@ -184,22 +186,41 @@ void Enemy::render()
         //SDL_RenderDrawRect(resource::gRenderer, &rect);
     }
 	else if(!isoutdated){
+		stringstream AddScore;
+		AddScore.str( "" );
+		AddScore<<"+ "<<localscore;
+		//Render adding score
+		SDL_Color textColor = { 255, 255, 255  };
+		if( !resource::scoreTexture.loadFromRenderedText( AddScore.str().c_str(), textColor ) )
+		{
+			printf( "Unable to render score texture!\n" );
+		}
+		resource::scoreTexture.render(resource::SCREEN_WIDTH - resource::gTextTexture.getWidth()+75  , 30);
+
+		static int deadPosX;
+		static int deadPosY;
+		if(Width||Height) {
+			deadPosX = PosX + (Width - 128) / 2;
+			deadPosY = PosY + (Height - 128) / 2;
+		}
+		resource::explosionTexture.render(deadPosX ,deadPosY ,&Explosion[explosionframe/5]);
+		Width = 0;//prevent to collide with explosion
+		Height =0;
 		DiffY = 0;
 		DiffX = 0;
-		resource::explosionTexture.render(PosX+(Width-128)/2,PosY + (Height-128)/2,&Explosion[explosionframe]);
-		explosionframe++;
 		Health = 0;
 		cout<<"ID :"<<ID<<" x "<<PosX<<" y "<<PosY<<"  ####killed"<<endl;
 		cout<<"current frame "<<explosionframe<<endl;
-		if(explosionframe==11){
+		if(explosionframe/5==11){
 			isoutdated =true;
 			Health = -1;
 		}
 		if(explosionframe == 5){
 			MusicPlayer explode;
 			explode.Play("../textures/Explosion.wav");
-			(resource::score)++;
+			(resource::score)+=localscore;
 		}
+		explosionframe++;
 	}
 	
 }

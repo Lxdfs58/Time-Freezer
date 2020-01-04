@@ -41,6 +41,7 @@ private:
     //render position
     int rendx;
     int rendy;
+    int localscore;
     bool isoutdated;
     //MusicPlayer explode;
 };

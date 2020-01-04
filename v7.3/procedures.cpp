@@ -54,7 +54,17 @@ bool init()
 bool loadMedia()
 {
 	bool success = true;
-	if( !resource::gDotTexture.loadFromFile("../textures/elephant.png" ) )
+	if( !resource::gElephantTexture.loadFromFile("../textures/elephant.png" ) )
+	{
+		printf( "Failed to load walking animation texture!\n" );
+		success = false;
+	}
+	if( !resource::gCowTexture.loadFromFile("../textures/cow.png" ) )
+	{
+		printf( "Failed to load walking animation texture!\n" );
+		success = false;
+	}
+	if( !resource::gWolfTexture.loadFromFile("../textures/wolf.png" ) )
 	{
 		printf( "Failed to load walking animation texture!\n" );
 		success = false;
@@ -147,18 +157,23 @@ bool loadMedia()
 
 void close()
 {
-	resource::gDotTexture.free();
+	resource::gElephantTexture.free();
+	resource::gCowTexture.free();
+	resource::gWolfTexture.free();
 	resource::gBGTexture.free();
 	resource::rockTexture.free();
-	resource::gTextTexture.free();
-	resource::scoreTexture.free();
+	resource::menuTexture.free();
 	resource::bulletTexture.free();
 	resource::sharkTexture.free();
+	resource::bluesharkTexture.free();
 	resource::troodonTexture.free();
+	resource::bluetroodonTexture.free();
 	resource::fishTexture.free();
+	resource::bluefishTexture.free();
 	resource::explosionTexture.free();
 	resource::gameoverTexture.free();
-	resource::restartTexture.free();
+	resource::gTextTexture.free();
+	resource::scoreTexture.free();
 	
 	SDL_DestroyRenderer( resource::gRenderer );
 	SDL_DestroyWindow( resource::gWindow );

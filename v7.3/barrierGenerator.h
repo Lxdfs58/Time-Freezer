@@ -9,7 +9,7 @@ class BarrierGenerator
 {
 private:
     std::list<std::shared_ptr<entity> > *pool;
-    std::shared_ptr<barrier> lastBarrier;
+    barrier *newBarrier;
 
 public:
     BarrierGenerator(std::list<std::shared_ptr<entity> > *pool);

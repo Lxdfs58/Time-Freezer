@@ -15,13 +15,16 @@ public:
 	static const int BARRIER_Y_DISTANCE = 260;
 
 	static int score;
+	static long long distance;
 
     static SDL_Window *gWindow;
     static SDL_Renderer *gRenderer;
     static TTF_Font *gFont;
 
 
-	static LTexture gDotTexture;
+	static LTexture gElephantTexture;
+	static LTexture gCowTexture;
+	static LTexture gWolfTexture;
 	static LTexture gBGTexture;
 	static LTexture rockTexture;
 	static LTexture menuTexture;

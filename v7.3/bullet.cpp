@@ -19,21 +19,51 @@ void bullet::move(int Vx , int Vy)
     {
     case DIR_CENTRE:
         DiffX = 0;
+	    if(Vy)
+		    DiffY=Vy>0? -Vy*2 :Vy*2;
+	    else
+		    DiffY=Vx>0? -Vx*2 :Vx*2;
         break;
  
     case DIR_LEFT:
         DiffX = DiffY/4;
+	    if(Vy)
+		    DiffY=Vy>0? -Vy*2 :Vy*2;
+	    else
+		    DiffY=Vx>0? -Vx*2 :Vx*2;
         break;
  
     case DIR_RIGHT:
         DiffX = -DiffY/4;
+	    if(Vy)
+		    DiffY=Vy>0? -Vy*2 :Vy*2;
+	    else
+		    DiffY=Vx>0? -Vx*2 :Vx*2;
         break;
+
+    case DIR_StraighLEFT:
+	    if(Vx||Vy) {
+		    DiffX = -8;
+		    DiffY =Vy;
+	    }
+	    else{
+	    	DiffY = 0;
+	    	DiffX = 0;
+	    }
+	    break;
+
+    case DIR_StraighRIGHT:
+	    if(Vx||Vy) {
+		    DiffX = 8;
+		    DiffY =Vy;
+	    }
+	    else{
+		    DiffY = 0;
+		    DiffX = 0;
+	    }
+	    break;
     }
 
-    if(Vy)
-	DiffY=Vy>0? -Vy*2 :Vy*2;
-    else
-	DiffY=Vx>0? -Vx*2 :Vx*2;
 
 	PosX += DiffX;
 	PosY += DiffY;

@@ -1,21 +1,46 @@
 #include "resource.h"
 #include "player.h"
 #include "MusicPlayer.h"
-player::player(int x, int y)
+player::player(int x, int y,int k)
     : entity(WIDTH, HEIGHT, x, y)
 {
 	type=ENTITY_TYPE_PLAYER;
 	Health=1;
+	//type of player
+	kind = k;
 	//Initialize the frame
 	frame = 0;
 	//Initialize the clips
-	for(int i=0;i<WALKING_ANIMATION_FRAMES;i++)
-    {
-        SplitClips[i].x = 140 + 367 * i;
-        SplitClips[i].y = 52;
-        SplitClips[i].w = Width;
-        SplitClips[i].h = Height;
-    }
+	if(kind == 1) {
+		Width  = 80;
+		Height = 200;
+		for(int i = 0; i < WALKING_ANIMATION_FRAMES; i++) {
+			SplitClips[i].x = 140 + 367 * i;
+			SplitClips[i].y = 52;
+			SplitClips[i].w = Width;
+			SplitClips[i].h = Height;
+		}
+	}
+	else if(kind == 2){
+		Width  = 55;
+		Height = 120;
+		for(int i = 0; i < WALKING_ANIMATION_FRAMES; i++) {
+			SplitClips[i].x = 55 * i;
+			SplitClips[i].y = 0;
+			SplitClips[i].w = Width;
+			SplitClips[i].h = Height;
+		}
+	}
+	else if(kind == 3){
+		Width  = 34;
+		Height = 120;
+		for(int i = 0; i < WALKING_ANIMATION_FRAMES; i++) {
+			SplitClips[i].x = 34 * i;
+			SplitClips[i].y = 0;
+			SplitClips[i].w = Width;
+			SplitClips[i].h = Height;
+		}
+	}
     ExplosionFrame=0;
     isoutdated=false;
     for(int i=0;i<3;i++)
@@ -75,9 +100,14 @@ void player::render()
   //  SDL_Rect rect = { .x=PosX, .y=PosY, .w=getWidth(), .h=getHeight() };
   //  SDL_RenderDrawRect(resource::gRenderer, &rect);
 #warning Temporary hide!
-	if(Health==1)
+	if(Health>=1)
 	{
-		resource::gDotTexture.render(PosX, PosY, &SplitClips[frame]);
+		if(kind == 1)
+			resource::gElephantTexture.render(PosX, PosY, &SplitClips[frame]);
+		else if(kind == 2)
+			resource::gCowTexture.render(PosX, PosY, &SplitClips[frame]);
+		else if(kind == 3)
+			resource::gWolfTexture.render(PosX, PosY, &SplitClips[frame]);
 	}
 	else if(Health==0 && !isoutdated){
 
