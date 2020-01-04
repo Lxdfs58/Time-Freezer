@@ -1,0 +1,3 @@
+/Users/lxdfs/Documents/C++/TIME_FREEZER/v7.0/cmake-build-debug/CMakeFiles/rebuild_cache.dir
+/Users/lxdfs/Documents/C++/TIME_FREEZER/v7.0/cmake-build-debug/CMakeFiles/edit_cache.dir
+/Users/lxdfs/Documents/C++/TIME_FREEZER/v7.0/cmake-build-debug/CMakeFiles/V7.0.dir
